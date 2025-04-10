@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Portfolio Builder</title>
+  <link rel="stylesheet" href="port.css" />
+</head>
+<body>
+
+  <!-- Upload Panel -->
+  <div class="upload-panel" id="uploadPanel">
+    <h2>Upload Portfolio Images & Content</h2>
+
+    <label>Your Name / Tagline:
+      <input type="text" id="nameInput" placeholder="e.g. Jane Doe - UI/UX Designer">
+    </label>
+
+    <label>Hero Background:
+      <input type="file" id="heroInput" accept="image/*" />
+    </label>
+
+    <label>Profile Picture:
+      <input type="file" id="profileInput" accept="image/*" />
+    </label>
+
+    <label>Personal Logo:
+      <input type="file" id="logoInput" accept="image/*" />
+    </label>
+
+    <label>Project Image:
+      <input type="file" id="projectInput" accept="image/*" />
+    </label>
+    <label>Project Description:
+      <textarea id="projectText" placeholder="Describe your project here..."></textarea>
+    </label>
+
+    <label>Skill Icon:
+      <input type="file" id="skillInput" accept="image/*" />
+    </label>
+    <label>Skills Summary:
+      <textarea id="skillText" placeholder="Mention your skills..."></textarea>
+    </label>
+
+    <label>Client Logo:
+      <input type="file" id="clientInput" accept="image/*" />
+    </label>
+    <label>Client Note:
+      <textarea id="clientText" placeholder="Client feedback or note..."></textarea>
+    </label>
+
+    <button id="doneBtn">Done</button>
+  </div>
+
+  <!-- Portfolio Layout -->
+  <header class="hero" id="heroDisplay">
+    <div class="img-wrapper" data-input="heroInput" data-type="bg">
+      <p class="edit-btn">Edit</p>
+    </div>
+    <img id="logoDisplay" class="logo img-editable" data-input="logoInput" alt="Logo">
+    <div class="img-wrapper profile-wrapper" data-input="profileInput">
+      <img id="profileDisplay" class="profile" alt="Profile Picture">
+      <p class="edit-btn">Edit</p>
+    </div>
+    <h1 id="nameDisplay">Welcome to My Portfolio</h1>
+  </header>
+
+  <main class="content">
+    <section class="project">
+      <h2>Featured Project</h2>
+      <div class="img-wrapper" data-input="projectInput">
+        <img id="projectDisplay" alt="Project Image">
+        <p class="edit-btn">Edit</p>
+      </div>
+      <p id="projectDesc"></p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="img-wrapper" data-input="skillInput">
+        <img id="skillDisplay" alt="Skill Icon">
+        <p class="edit-btn">Edit</p>
+      </div>
+      <p id="skillDesc"></p>
+    </section>
+
+    <section class="clients">
+      <h2>Clients</h2>
+      <div class="img-wrapper" data-input="clientInput">
+        <img id="clientDisplay" alt="Client Logo">
+        <p class="edit-btn">Edit</p>
+      </div>
+      <p id="clientDesc"></p>
+    </section>
+  </main>
+
+  <script src="port.js"></script>
+</body>
+</html>
